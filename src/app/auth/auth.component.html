@@ -1,0 +1,52 @@
+<!-- <mat-grid-list cols="3" rowHeight="150px" gutterSize="5px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1">Tile 1</mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="1">Tile 2</mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="2">Tile 3</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">Tile 4</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="2">Tile 5</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">Tile 6</mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">Tile 7</mat-grid-tile>
+</mat-grid-list> -->
+<mat-grid-list cols="4">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile [colspan]="2">
+        <div>
+            <form class="auth-form" [formGroup]="form" (submit)="onSubmit()">
+                <mat-form-field appearance="fill">
+                    <mat-label>Username</mat-label>
+                    <input type="text" matInput placeholder="username" required formControlName="username">
+                    @if(form.get('username')?.hasError('required') && form.get('username')?.touched){
+                    <mat-error>Username is required</mat-error>
+                    }
+                    @if(form.get('username')?.hasError('minlength') && form.get('username')?.touched){
+                    <mat-error>Username is min 3 chars</mat-error>
+                    }
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Enter Your Password" required
+                        formControlName="password">
+                    @if(form.get('password')?.hasError('required') && form.get('password')?.touched){
+                    <mat-error>Password is required</mat-error>
+                    }
+                </mat-form-field>
+                <button type="submit" color="primary" mat-raised-button>Submit</button>
+            </form>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+<!-- posts: {{posts}} -->
+<!-- @for(post of posts){
+    <p>{{post.title}}</p>
+}@empty {
+    <p>Nothing here</p>
+} -->
+<!-- <div *ngFor="let post of posts">
+    <p>{{post.title}}</p>
+</div> -->
+<!-- @for(post of posts; track post?.title){
+    <p>{{post.title}}</p>
+}@empty{
+    <p>Nothing here</p>
+} -->

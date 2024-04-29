@@ -1,0 +1,16 @@
+input[type="file"] {
+    visibility: hidden
+}
+
+.upload-card {
+    padding: 20px;
+}
+
+.file-preview {
+    height: 200px;
+    /* width: 200px; */
+}
+
+mat-slider {
+    width: 300px;
+}

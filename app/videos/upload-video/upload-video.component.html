@@ -1,0 +1,41 @@
+<mat-card class="upload-card">
+    <form [formGroup]="fileForm" (submit)="onFileConversion()">
+        <div>
+            <button mat-stroked-button type="button" (click)="filePicker.click()">Upload Video</button>
+            <input type="file" #filePicker (change)="onVideoPicked($event)">
+            <br>
+            @if(isLoading){
+            <!-- file uploading ... -->
+            <mat-spinner></mat-spinner>
+            Please wait while your video is being uploaded
+            }
+            @if(!isLoading){
+            <!-- file not uploading {{isLoading}} -->
+            <!-- @if(filePreview !== '' && filePreview && fileForm.get('videoFile').valid){ -->
+            @if(filePreview !== '' && filePreview){
+            <!-- @if(filePreview !== '' && filePreview){ -->
+            <!-- <img [src]="filePreview" [alt]="'form.value. or maybe the name of image goes here'" class="file-preview"> -->
+            <video [src]="filePreview" class="file-preview" height="200" controls>
+                <!-- <video [src]="'http://localhost:3000/videos/1_2014_trimmed-1713340936120.mp4'" class="file-preview" height="200" controls> -->
+                <!-- <source [src]="filePreview" type="video/mp4">
+                        your browser does not support the video tag -->
+            </video>
+            <br>
+            <mat-slider min="-10" max="10" step="0.1" [discrete]="true">
+                <label for="brightness">Brightness: {{this.fileForm.get('brightness').value}}</label>
+                <input matSliderThumb (change)="brightness()" formControlName="brightness">
+            </mat-slider>
+            <br>
+            <mat-slider min="0" max="100" step="1" [discrete]="true">
+                <label for="volume">Volume: {{this.fileForm.get('volume').value}}</label>
+                <input matSliderThumb (change)="volume()" formControlName="volume">
+            </mat-slider>
+            <br>
+            }
+            }
+            <br>
+            <!-- <button mat-button type="button" (click)="onBrightnessChange(10)" [disabled]="!fileForm.valid">test brightness</button> -->
+            <button mat-button type="submit" [disabled]="!fileForm.valid">Run conversion</button>
+        </div>
+    </form>
+</mat-card>

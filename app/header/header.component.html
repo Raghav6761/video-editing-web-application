@@ -1,0 +1,55 @@
+<header>
+    <mat-toolbar class="header">
+        <span class="nav-logo">
+            <span>
+                PYQ Platform
+            </span>
+            <span>
+                <img src="/assets/images/logo/pyqplatform-final-logo.jpg" alt="" class="logo">
+            </span>
+        </span>
+        <span class="vertical-spacer"></span>
+        <button mat-button  routerLink="/" routerLinkActive="active" class="item-desktop">
+            Home
+        </button>
+        <button mat-button routerLink="/upload" routerLinkActive="active" class="item-desktop">
+            Upload Video
+        </button>
+        <button mat-button class="item-desktop">
+            Contact
+        </button>
+        <button mat-button  routerLink="/auth" routerLinkActive="active" class="item-desktop">
+            Login as a Editor
+        </button>
+        <button mat-icon-button class="menu-icon" [matMenuTriggerFor]="menu" aria-label="Menu">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="/" routerLinkActive="active">Home</a>
+            <!-- <button mat-menu-item routerLink="/upload">About Us</button> -->
+            <a mat-menu-item routerLink="/upload" routerLinkActive="active">Upload Video</a>
+            <a mat-menu-item>Contact</a>
+            <a mat-menu-item routerLink="auth" routerLinkActive="active">Login as a Editor</a>
+        </mat-menu>
+    </mat-toolbar>
+</header>
+
+<!-- Sidenav container referance -- to be used in case we need to add the side nav in the mobile screen -- styling has to be done though -->
+
+<!-- <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened="true">
+        <p>
+            <a routerLink="/home">Home</a>
+            <a routerLink="/contact">Contact</a>
+            <a routerLink="/about">About</a>
+        </p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="primary">
+            <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
+            My App
+        </mat-toolbar>
+
+        <div>Welcome to the application</div>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->

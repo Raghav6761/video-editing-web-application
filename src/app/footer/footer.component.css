@@ -1,0 +1,30 @@
+*{
+    color: white;
+}
+
+footer{
+    background-color: rgb(0, 0, 175);
+}
+
+.row .col-md-4{
+    text-align: center;
+    padding: auto 30px;
+}
+
+.logo{
+    width: 50%;
+}
+
+.links{
+    display: flex;
+}
+
+.links .col-6 a{
+    display: block;
+    text-decoration: none;
+    /* text-align: left; */
+}
+
+.links p{
+    text-align: left;
+}

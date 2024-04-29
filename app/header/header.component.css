@@ -1,0 +1,49 @@
+*{
+    color: black
+}
+
+.header{
+    background-color: #D5E7F5;
+    padding-top: 70px;
+    padding-bottom: 50px;
+}
+
+.vertical-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.nav-logo span{
+    width:100px;
+}
+
+.nav-logo .logo{
+    width:100%;
+    height: 100%
+}
+
+.item-desktop{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.menu-icon{
+    display: none;
+}
+
+@media screen and (max-width:600px){
+    .menu-icon{
+        display: inline-block;
+    }
+
+    .item-desktop{
+        display: none;
+    }
+}
